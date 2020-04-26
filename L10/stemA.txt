@@ -4484,6 +4484,7 @@ unjustliest:unjustly
 bucksheest:buckshee
 cockniest:cockney
 earthlikest:earthlike
+quietly:quiet
 nohowest:nohow
 carniest:carny
 fimbriatest:fimbriate
