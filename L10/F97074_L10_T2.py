@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # for example:
     # * notaword -> notaword
     # * better -> well
-    # * quelier -> quietly -> quiet
+    # * quelier -> quietly -> quiet (not currently available in the stemA.txt, but this script would support it)
     # note: if there is a cycle in the dictionary, it will hang
     while word in stems:
         word = stems[word]
