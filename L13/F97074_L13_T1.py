@@ -52,17 +52,9 @@ def get_items():
         root = tree.getroot()
 
         # fill in the items
-        items = [ ]
-        for c in root.findall('rss:item', NS):
-            try:
-                title = c.find("rss:title", NS)
-                description = c.find("rss:description", NS)
-                items.append((title.text, description.text))
-            except:
-                # discard any invalid items (if any)
-                pass
-
-        return items
+        return [
+            (c.find("rss:title", NS).text, c.find("rss:description", NS).text)
+                for c in root.findall("rss:item", NS)]
 
 def main():
     # get the items from the RSS
