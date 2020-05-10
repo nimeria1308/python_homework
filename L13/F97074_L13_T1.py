@@ -8,7 +8,7 @@ try:
 except ImportError:
     from urllib2 import urlopen
 
-NBU_RSS_URL = 'http://rss.slashdot.org/Slashdot/slashdot'
+SLASHDOT_RSS_URL = 'http://rss.slashdot.org/Slashdot/slashdot'
 NS = { "rss" : "http://purl.org/rss/1.0/" }
 
 class MainWindow(wx.Frame):
@@ -46,7 +46,7 @@ class MainWindow(wx.Frame):
 
 def get_items():
     # request RSS data
-    with urlopen(NBU_RSS_URL) as rss:
+    with urlopen(SLASHDOT_RSS_URL) as rss:
         # parse the request (file object)
         tree = ET.parse(rss)
         root = tree.getroot()
@@ -64,7 +64,7 @@ def main():
     app = wx.App()
 
     # Create and show the main window
-    frm = MainWindow(items, None, title="NBU RSS feed explorer", size=(640, 480))
+    frm = MainWindow(items, None, title="Slashdot RSS feed explorer", size=(640, 480))
     frm.Show()
 
     # Start the event loop.
